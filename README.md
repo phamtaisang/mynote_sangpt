@@ -20,4 +20,71 @@ Với kho lưu trữ được tạo trong tài khoản GitHub của bạn, hãy 
 
 Hoặc sao chép nó về bằng công cụ `Visual Studio Code` bằng cách đi đến menu *`View > Command Palette...`* rồi nhập `Git: Clone` sau đó cung cấp URL của kho lưu trữ hoặc chọn nguồn kho lưu trữ `https://github.com/<YOUR_ACCOUNT_NAME>/mynote.git`.
 
-Chờ một lúc và mở nó ra để tiếp tục viết mã.
+### Code Mẫu phần Note
+
+## note_model
+
+```dart
+class Note {
+  final String title;
+  final String desc;
+
+  Note(this.title, this.desc);
+
+}
+```
+
+## note_viewmodel
+```dart
+import 'package:stacked/stacked.dart';
+
+class NoteViewModel extends BaseViewModel {
+  final title = "Note View Model";
+}
+```
+
+## note_view
+```dart
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:lab42/ui/views/note/note_viewmodel.dart';
+import 'package:stacked/stacked.dart';
+
+class NoteView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ViewModelBuilder<NoteViewModel>.reactive(
+      builder: (context, model, child) => Scaffold(
+        appBar: AppBar(
+          title: Text(model.title),
+        ),
+        body: Center(
+          child: Text("Hello My"),
+        ),
+      ),
+      viewModelBuilder: () => NoteViewModel(),
+    );
+  }
+}
+```
+
+## main
+```dart
+import 'package:flutter/material.dart';
+import 'package:lab42/ui/views/note/note_view.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: NoteView(),
+    );
+  }
+}
+
+```
