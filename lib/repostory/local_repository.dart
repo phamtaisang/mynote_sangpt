@@ -1,5 +1,4 @@
-
-import 'package:noteapp/ui/views/note/note_model.dart';
+rimport 'package:mynote/ui/views/note/note_model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -10,8 +9,7 @@ class LocalRepository {
   /// Lưu cache để không phải tạo nhiều đối tượng
   static final _cache = <String, LocalRepository>{};
 
-   // putIfAbsent: Khởi tạo nếu như chưa có => Tạo duy nhất 1 lần
-  // Tạo 1 getter để lấy chính nó ra 
+  /// Tạo một getter để lấy ra chính nó
   static LocalRepository get instance => _cache.putIfAbsent(
       'LocalPersistence', () => LocalRepository._internal());
 
@@ -32,6 +30,7 @@ class LocalRepository {
       /// Trong trường hợp database chưa có
       /// TODO: Trường hợp thay đổi lược đồ cần phải nghiên cứu kỹ
       await db.execute(Note.createTable);
+
       /// TODO: Thêm các bảng khác ở đây như đối với Note
     });
     isInitialized = true;
