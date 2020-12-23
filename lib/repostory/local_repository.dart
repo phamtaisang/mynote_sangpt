@@ -1,4 +1,4 @@
-rimport 'package:mynote/ui/views/note/note_model.dart';
+import 'package:mynote/ui/views/note/note_model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
