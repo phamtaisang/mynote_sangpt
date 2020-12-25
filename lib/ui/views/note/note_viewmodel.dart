@@ -1,14 +1,16 @@
+import 'package:mynote/ui/views/login/login_view.dart';
+import 'package:mynote/ui/views/login/login_viewmodel.dart';
+import 'package:mynote/ui/views/note/note_model.dart';
+import 'package:mynote/ui/views/note/widgets/note_view_item.dart';
+import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'package:mynote/ui/views/note/note_repository.dart';
-import 'package:stacked/stacked.dart';
-
-import 'note_model.dart';
 
 /// Trạng thái của view
 enum NoteViewState { listView, itemView, insertView, updateView }
 
 class NoteViewModel extends BaseViewModel {
-  final title = 'Note View Model';
+  final title = 'Quản lý ghi chú';
 
   /// Danh sách các bản ghi được load bất đồng bộ bên trong view model,
   /// khi load thành công thì thông báo đến view để cập nhật trạng thái
@@ -44,7 +46,11 @@ class NoteViewModel extends BaseViewModel {
   ///
   var repo = NoteRepository();
 
-  Future init() async {
+  Future init(context) async {
+    if (LoginViewModel.userCurrent == null) {
+      print("hahaha");
+      // Navigator.pushNamed(context, '/login');
+    } else {}
     return reloadItems();
   }
 
@@ -72,11 +78,25 @@ class NoteViewModel extends BaseViewModel {
     state = NoteViewState.updateView;
   }
 
-  void saveItem() {
-    // TODO lưu editingItem
-
-    // TODO editingItem = null
+  void deleteItem() {
+    repo.delete(editingItem);
+    _items.removeWhere((element) => element.id == editingItem.id);
+    state = NoteViewState.listView;
     editingItem = null;
     notifyListeners();
+  }
+
+  void saveItem() {
+    Note note =
+        new Note(editingControllerTitle.text, editingControllerDesc.text);
+    note.id = editingItem.id;
+    repo.update(note).then((value) {
+      int index = _items.indexWhere((element) => element.id == note.id);
+      _items[index].title = note.title;
+      _items[index].desc = note.desc;
+      state = NoteViewState.listView;
+      editingItem = null;
+      notifyListeners();
+    });
   }
 }
