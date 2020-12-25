@@ -88,3 +88,8 @@ class MyApp extends StatelessWidget {
 }
 
 ```
+
+### kết quả
+![Alt text](image/kq1.png?raw=true "ket qua 1")
+![Alt text](image/kq2.png?raw=true "ket qua 2")
+![Alt text](image/kq3.png?raw=true "ket qua 3")
