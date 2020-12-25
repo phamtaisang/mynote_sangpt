@@ -3,6 +3,10 @@ Xây dựng ứng dụng Note
 (Đây là phần thực hành của nội dung chương 4 trong học phần *Phát triển ứng dụng đa nền tảng* đang được giảng dạy tại Khoa Công nghệ thông tin của Trường Đại học Mỏ - Địa chất)
 
 ## Bắt đầu
+### bài thu hoạch
+    msv     : 1621050274
+    họ tên : Phạm Tài Sang
+    lớp       : CNPM-D-K61
 
 ### Tạo một kho lưu trữ
 Bài viết này sử dụng kho lưu trữ mẫu (template) GitHub để giúp bạn dễ dàng bắt đầu. Mẫu có một ứng dụng web tĩnh rất đơn giản để chúng ta có thể sử dụng như một điểm khởi đầu.
@@ -90,6 +94,15 @@ class MyApp extends StatelessWidget {
 ```
 
 ### kết quả
+
+#### 1.màn hình login
+
 ![Alt text](image/kq1.png?raw=true "ket qua 1")
+
+#### 2.danh sách ghi chú
+
 ![Alt text](image/kq2.png?raw=true "ket qua 2")
+
+### 3.chi tiết ghi chú
+
 ![Alt text](image/kq3.png?raw=true "ket qua 3")
