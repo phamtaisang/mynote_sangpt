@@ -28,6 +28,7 @@ class NoteViewItemEdit extends ViewModelWidget<NoteViewModel> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text("ID:" +model.editingItem.id),
               TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Nhập tiêu đề',

@@ -1,7 +1,7 @@
 import 'package:mynote/repostory/local_repository.dart';
-import 'package:mynote/repostory/repository.dart';
+import 'package:mynote/repostory/responsitory.dart';
+import 'package:mynote/ui/views/note/note_model.dart';
 
-import 'note_model.dart';
 
 class NoteRepository implements Repository<Note> {
   NoteRepository._internal(LocalRepository localRepo) {
@@ -44,3 +44,4 @@ class NoteRepository implements Repository<Note> {
     return Note.fromList(maps);
   }
 }
+

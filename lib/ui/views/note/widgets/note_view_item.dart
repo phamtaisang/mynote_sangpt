@@ -16,7 +16,10 @@ class NoteViewItem extends ViewModelWidget<NoteViewModel> {
         actions: [
           IconButton(
               icon: Icon(Icons.edit),
-              onPressed: () => model.updateItem())
+              onPressed: () => model.updateItem()),
+          IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () => model.deleteItem())
         ],
       ),
       body: Center(

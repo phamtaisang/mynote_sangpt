@@ -8,11 +8,12 @@ class Note {
       .toRadixString(16)
       .padLeft(5, '0');
 
-  final String title;
-  final String desc;
+  String title;
+  String desc;
   bool isDeleted = false;
 
   Note(this.title, this.desc);
+  
 
   /// Tên của bảng CSDL, nó nên được gán sẵn và có thể lấy ra từ data
   /// model mà không cần khởi tạo nên nó là static để dễ sử dung.
@@ -31,6 +32,7 @@ class Note {
   /// theo cấu trúc Map mà không cần khởi tạo đối tượng nên nó là static.
   static List<Note> fromList(List<Map<String, dynamic>> query) {
     List<Note> items = List<Note>();
+    print("items" + items.toString());
     for (Map map in query) {
       items.add(Note.fromMap(map));
     }
