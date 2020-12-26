@@ -1,12 +1,12 @@
 # mynote
 Xây dựng ứng dụng Note
-(Đây là phần thực hành của nội dung chương 4 trong học phần *Phát triển ứng dụng đa nền tảng* đang được giảng dạy tại Khoa Công nghệ thông tin của Trường Đại học Mỏ - Địa chất)
-
-## Bắt đầu
 ### bài thu hoạch
     msv     : 1621050274
     họ tên : Phạm Tài Sang
     lớp       : CNPM-D-K61
+(Đây là phần thực hành của nội dung chương 4 trong học phần *Phát triển ứng dụng đa nền tảng* đang được giảng dạy tại Khoa Công nghệ thông tin của Trường Đại học Mỏ - Địa chất)
+
+## Bắt đầu
 
 ### Tạo một kho lưu trữ
 Bài viết này sử dụng kho lưu trữ mẫu (template) GitHub để giúp bạn dễ dàng bắt đầu. Mẫu có một ứng dụng web tĩnh rất đơn giản để chúng ta có thể sử dụng như một điểm khởi đầu.
